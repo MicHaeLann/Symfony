@@ -1,0 +1,69 @@
+{% extends 'BlogBundle:Default:index.html.twig' %}
+
+{% block nav %}
+	<nav class="blog-nav">
+		{% for nav in navs %}
+			{% if nav.title == 'Category' %}
+			    <a class="blog-nav-item active" href="{{nav.url}}">{{nav.title}}</a>
+			{% else %}
+				<a class="blog-nav-item" href="{{nav.url}}">{{nav.title}}</a>
+			{% endif %}
+		{% endfor %}		
+	</nav>
+{% endblock %}
+
+{% block header %}
+	<h1 class="blog-title">{{title}}</h1>
+{% endblock %}
+
+{% block body %}
+	<div class="col-sm-8 blog-main">
+		<a class='btn btn-default' href='{{nav_create.url}}'>{{nav_create.title}}</a>		
+		<table class="table table-hover blog-category-table">
+			<thead>
+				<tr>
+					<th>#</th>
+					<th>Category Name</th>
+					<th>Option</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for category in categories %}
+				<tr>
+					<th scope="row">
+						{{loop.index}}
+					</th>
+					<td>
+						{{category.name}}
+					</td>
+					<td>
+						<a class='btn btn-success' href='{{category.navEdit}}'>Edit</a>
+						<a class='btn btn-danger' href='{{category.navDel}}'>Delete</a>
+					</td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>		
+	</div>
+{% endblock %}
+
+{% block sidebar %}
+	<div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+	  <div class="sidebar-module">
+	    <h4>Archives</h4>
+	    <ol class="list-unstyled">
+	    	{% for category in categories %}
+				<li><a href="{{category.navView}}">{{category.name}}</a></li>
+	      	{% endfor %}
+	    </ol>
+	  </div>
+	  <div class="sidebar-module">
+	    <h4>Elsewhere</h4>
+	    <ol class="list-unstyled">
+	      <li><a href="#">GitHub</a></li>
+	      <li><a href="#">Twitter</a></li>
+	      <li><a href="#">Facebook</a></li>
+	    </ol>
+	  </div>
+	</div><!-- /.blog-sidebar -->
+{% endblock %}

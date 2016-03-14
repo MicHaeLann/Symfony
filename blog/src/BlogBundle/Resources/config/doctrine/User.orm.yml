@@ -1,0 +1,25 @@
+BlogBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: BlogBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: 255
+        createDate:
+            type: datetime
+            column: create_date
+        updateDate:
+            type: datetime
+            column: update_date
+    lifecycleCallbacks: {  }

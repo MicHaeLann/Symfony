@@ -1,0 +1,22 @@
+{% extends 'BlogBundle:Default:index.html.twig' %}
+
+{% block nav %}
+	<nav class="blog-nav">
+		{% for nav in navs %}
+			<a class="blog-nav-item active" href="{{nav.url}}">{{nav.title}}</a>
+		{% endfor %}		
+	</nav>
+{% endblock %}
+
+{% block body %}
+	<div class="blog-home-header">
+        <h1 class="blog-home-title">The Bootstrap Blog</h1>
+        <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
+    </div>
+    <div class="row">
+    	<div class="col-sm-8 blog-main blog-post">
+	    	<a class="btn btn-primary" href="{{navLogin}}">Login</a>
+			<a class="btn btn-success" href="{{navJoin}}">Join</a>
+		</div>
+    </div>
+{% endblock %}
