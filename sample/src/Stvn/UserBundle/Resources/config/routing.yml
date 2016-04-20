@@ -1,9 +1,0 @@
-#user login
-stvn_user_homepage:
-    path:     /login
-    defaults: { _controller: StvnUserBundle:Default:login }
-
-#user sign up
-stvn_user_sign:
-    path:     /sign
-    defaults: { _controller: StvnUserBundle:Default:sign }
