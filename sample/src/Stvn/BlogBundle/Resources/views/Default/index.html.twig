@@ -1,0 +1,51 @@
+{% extends 'StvnBlogBundle::layout.html.twig' %}
+
+{% block left %}
+<div class="row">
+    <h4>Categories</h4>
+</div>
+{% for category in categories %}
+    <div class="row">
+        <div class="col-md-3">
+            <a href=" {{ path('stvn_blog_homepage', {'categoryId': category.id}) }} ">{{ category.name }}</a>
+        </div>
+        <div class="col-md-1">
+            <a href=" {{ path('stvn_blog_editcategory', {'id': category.id}) }} ">
+                <span class="glyphicon glyphicon-pencil">edit</span>
+            </a>
+        </div>
+    </div>
+{% endfor %}
+<div class="row">
+    <div class="col-md-offset-1">
+        <a href="{{ path('stvn_blog_addcategory') }}">
+            <span class="glyphicon glyphicon-plus">new</span>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block right %}
+<div class="row">
+    <h2>Articles</h2>
+</div>
+{% for article in articles %}
+    <div class="row">
+        <div class="col-md-7">
+            <a href=" {{ path('stvn_blog_detail', {'id': article.id}) }} ">{{ article.title }}</a>
+        </div>
+        <div class="col-md-1">
+            <a href=" {{ path('stvn_blog_editarticle', {'id': article.id}) }} ">
+                <span class="glyphicon glyphicon-pencil">edit</span>
+            </a>
+        </div>
+    </div>
+{% endfor %}
+<div class="row">
+    <div class="col-md-8">
+        <a href="{{ path('stvn_blog_addarticle') }}">
+            <span class="glyphicon glyphicon-plus">new</span>
+        </a>
+    </div>
+</div>
+{% endblock %}

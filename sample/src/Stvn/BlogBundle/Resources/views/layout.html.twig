@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Sample Blog System - BlogBundle
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <h1>Sample Blog</h1>
+        </div>
+        <div class="row">
+            {% block blog %}
+                <div class="col-md-4">
+                    {% block left %}
+                        display categories here!
+                    {% endblock %}
+                </div>
+                <div class="col-md-8">
+                    {% block right %}
+                        display content here!
+                    {% endblock %}
+                </div>
+            {% endblock %}
+        </div>
+    </div>
+{% endblock %}

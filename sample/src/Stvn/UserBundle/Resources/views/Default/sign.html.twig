@@ -1,0 +1,12 @@
+{% extends 'StvnUserBundle::layout.html.twig' %}
+
+{% block user %}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.password) }}
+        {{ form_row(form.confirmed_password) }}
+        {{ form_row(form.signUp, {'label': 'Sign Up'}) }}
+        <a href="{{ path('stvn_user_homepage') }}">login</a>
+    {{ form_end(form) }}
+{% endblock %}

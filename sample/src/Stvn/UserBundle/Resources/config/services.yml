@@ -1,0 +1,7 @@
+parameters:
+#    stvn_user.example.class: Stvn\UserBundle\Example
+
+services:
+#    stvn_user.example:
+#        class: %stvn_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

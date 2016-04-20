@@ -1,0 +1,13 @@
+{% extends 'StvnBlogBundle::layout.html.twig' %}
+
+{% block blog %}
+    <div class="row">
+        <h2>{{ article.title }}</h2>
+    </div>
+    <div class="row">
+        <h4>{{ article.content }}</h4>
+    </div>
+    <div class="row">
+        <a href="{{ path('stvn_blog_homepage') }}">back to blog index</a>
+    </div>
+{% endblock %}

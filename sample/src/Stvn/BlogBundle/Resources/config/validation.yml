@@ -1,0 +1,22 @@
+Stvn\BlogBundle\Entity\Category:
+    properties:
+        name:
+            - Length:
+                min: 3
+                max: 32
+
+Stvn\BlogBundle\Entity\Article:
+    properties:
+        title:
+            - Length:
+                min: 3
+                max: 255
+        content:
+            - Length:
+                min: 1
+                max: 1024
+        categoryId:
+            - Range:
+                min: 1
+                minMessage: You must select a category or Please add a category if you don't have one
+            

@@ -1,0 +1,20 @@
+MoaBundle\Entity\Provider:
+    type: entity
+    table: null
+    repositoryClass: MoaBundle\Repository\ProviderRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        providerName:
+            type: string
+            length: 255
+            column: provider_name
+        providerUrl:
+            type: string
+            length: 255
+            column: provider_url
+    lifecycleCallbacks: {  }

@@ -1,0 +1,8 @@
+Stvn\UserBundle\Entity\User:
+    properties:
+        email:
+            - Email: ~
+        password:
+            - Length:
+                min: 6
+                max: 15

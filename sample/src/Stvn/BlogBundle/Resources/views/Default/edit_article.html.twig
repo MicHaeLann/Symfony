@@ -1,0 +1,12 @@
+{% extends 'StvnBlogBundle::layout.html.twig' %}
+
+{% block blog %}
+    {{ form_start(form) }}
+        {{ form_errors(form) }}
+        {{ form_row(form.title) }}
+        {{ form_row(form.content) }}
+        {{ form_row(form.categoryId) }}
+        {{ form_row(form.save) }}
+        <a href="{{ path('stvn_blog_homepage') }}">back to blog index</a>
+    {{ form_end(form) }}
+{% endblock %}

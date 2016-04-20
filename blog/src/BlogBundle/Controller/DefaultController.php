@@ -294,7 +294,7 @@ class DefaultController extends Controller
     		$updated_category = $this->getDoctrine()
     			->getRepository('BlogBundle:Category')
     			->findBy(array(
-    				'user_id' => $uid,
+    				'userId' => $uid,
     				'name' => $name
     			));
 
@@ -413,7 +413,7 @@ class DefaultController extends Controller
     	return $this->render('BlogBundle:article_list.html.twig', array(
     		'navs' => $navs,
     		'nav_create' => $nav_create,
-    		'title' => $current_category->getName(),
+    		'title' => $id > 0 ? $current_category->getName() : 'All Articles',
     		'categories' => $categories,
     		'articles' => $list
     	));

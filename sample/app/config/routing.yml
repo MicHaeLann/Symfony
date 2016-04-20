@@ -1,0 +1,8 @@
+stvn_blog:
+    resource: "@StvnBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+stvn_user:
+    resource: "@StvnUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
